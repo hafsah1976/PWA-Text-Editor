@@ -52,21 +52,21 @@ registerRoute(
   }),
 );
 
-// Cache for ASCII files (assuming they have a specific file extension like .txt)
-registerRoute(
-  ({ request }) => request.destination === 'document' && request.url.endsWith('.txt'),
-  new CacheFirst({
-    cacheName: 'ascii-cache', // Cache name for ASCII files
-    plugins: [
-      // Cache responses with status codes 0 (offline) and 200 (successful)
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
-      // Set the maximum number of entries in the cache and expiration time (30 days)
-      new ExpirationPlugin({
-        maxEntries: 30, // Maximum number of cached ASCII files
-        maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days in seconds
-      }),
-    ],
-  })
-);
+// // Cache for ASCII files (assuming they have a specific file extension like .txt) just trying something out - for later
+// registerRoute(
+//   ({ request }) => request.destination === 'document' && request.url.endsWith('.txt'),
+//   new CacheFirst({
+//     cacheName: 'ascii-cache', // Cache name for ASCII files
+//     plugins: [
+//       // Cache responses with status codes 0 (offline) and 200 (successful)
+//       new CacheableResponsePlugin({
+//         statuses: [0, 200],
+//       }),
+//       // Set the maximum number of entries in the cache and expiration time (30 days)
+//       new ExpirationPlugin({
+//         maxEntries: 30, // Maximum number of cached ASCII files
+//         maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days in seconds
+//       }),
+//     ],
+//   })
+// );

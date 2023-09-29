@@ -4,37 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>J.A.T.E</title>
+
+    <!-- Include Codemirror CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css"
+    ></link>
     
-      <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css">
-      </link>
-      <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js">
-      </script>
-      <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/javascript/javascript.min.js">
-      </script>
-      <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/monokai.min.css">
-      </link>
+    <!-- Include Codemirror JavaScript Library -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js"
+    ></script>
+
+    <!-- Include Codemirror JavaScript Mode for JavaScript syntax highlighting -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/javascript/javascript.min.js"
+    ></script>
+    
+    <!-- Include Codemirror Monokai Theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/monokai.min.css"
+    ></link>
   </head>
   <body>
+    <!-- Navigation Bar -->
     <nav id="navbar">
       <div class="nav-btn">
+        <!-- Button for PWA Installation -->
         <a class="btn btn-sm btn-dark" id="buttonInstall" role="button">Install!</a>
       </div>
-     <h1> Just Another Text Editor</h1>
-     
-      <div class="navbar-brand" 
-            ><img src="./assets/icons/icon_96x96.png"
-          /></div>
+      <!-- Title -->
+      <h1>Just Another Text Editor</h1>
+
+      <!-- Navbar Brand Logo (Image) -->
+      <div class="navbar-brand">
+        <img src="./assets/icons/icon_96x96.png" />
+      </div>
     </nav>
 
+    <!-- Main Content Area -->
     <main id="main">
+      <!-- Loading Spinner Container (Placeholder) -->
       <div class="loading-container">
+        <!-- Loading Spinner (Placeholder) -->
         <div class="loading-spinner"></div>
       </div>
     </main>
-    
   </body>
 </html>

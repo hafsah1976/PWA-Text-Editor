@@ -28,6 +28,12 @@ module.exports = () => {
         title: 'Just Another Text Editor'
       }),
       
+      // InjectManifest configuration for service worker integration.
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
+      }),
+      
       // WebpackPwaManifest configuration to generate a manifest file.
       new WebpackPwaManifest({
         fingerprints: false,
@@ -51,11 +57,6 @@ module.exports = () => {
         ],
       }),
       
-      // InjectManifest configuration for service worker integration.
-      new InjectManifest({
-        swSrc: './src-sw.js',
-        swDest: 'src-sw.js',
-      }),
     ],
 
     // Define rules for processing different types of files (e.g., CSS, Babel for JavaScript).
