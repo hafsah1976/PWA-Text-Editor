@@ -1,6 +1,6 @@
 import { Workbox } from 'workbox-window'; // Import Workbox library for service workers
 import Editor from './editor'; // Import your Editor module
-import './database'; // Import a database module (assuming it's for initialization)
+import './database'; // Import a database module
 import '../css/style.css'; // Import your CSS styles
 
 const main = document.querySelector('#main'); // Get a reference to the main HTML element

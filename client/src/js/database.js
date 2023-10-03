@@ -23,34 +23,36 @@ export const putDb = async (content) => {
   console.log('Saving data to the database:', floppyDisk);
 
   // Create a connection to the 'jate' database with version 1.
-  const jatedb = await openDB('jate', 1);
+  const jateDB = await openDB('jate', 1);
 
   // Create a new transaction and specify the 'jate' object store with read-write privileges.
-  const tx = jatedb.transaction('jate', 'readwrite');
+  const tx = jateDB.transaction('jate', 'readwrite');
 
   // Open the 'jate' object store.
   const store = tx.objectStore('jate');
 
-  // Use the .add() method on the store to add content.
-  const request = await store.add({ text: content });
+  // Use the .put() method on the store to add content.
+  const request = store.put({ id: 1, value: content });
 
-  // Get confirmation of the request.
+  // confirmation request
+
   const result = await request;
-  console.log('Data saved to the database:', floppyDisk, result);
+
+  console.log('Data saved to the database.', floppyDisk, result);
+  
 };
-
-
+  
 // Placeholder for a method that gets all content from the database
 // Export a function we will use to GET data from the database.
 export const getDb = async () => {
   // Implement the logic to retrieve all content from the 'jate' object store in the database
-  console.log('GET from the database');
+  console.log('Get data from the database');
 
   // Create a connection to the 'jate' database with version 1.
-  const jatedb = await openDB('jate', 1);
+  const jateDB = await openDB('jate', 1);
 
   // Create a new transaction and specify the 'jate' object store with read-only privileges.
-  const tx = jatedb.transaction('jate', 'readonly');
+  const tx = jateDB.transaction('jate', 'readonly');
 
   // Open the 'jate' object store.
   const store = tx.objectStore('jate');
@@ -62,7 +64,7 @@ export const getDb = async () => {
   const result = await request;
   console.log('Result from the database:', result);
 
-  return result; // Return the retrieved data.
+  return result.value; // Return the retrieved data as an array of objects.
 };
   
 initdb(); // Initialize the database when the module is loaded

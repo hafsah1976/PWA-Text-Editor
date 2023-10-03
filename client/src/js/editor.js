@@ -1,7 +1,7 @@
 // Import methods to save and get data from the indexedDB database in './database.js'
 import { getDb, putDb } from './database';
 
-// Import 'header' (assuming it's a variable or module)
+// Import 'header'module
 import { header } from './header';
 
 // Define a class for the editor
